@@ -1,0 +1,27 @@
+@import "_reset";
+@import "_function";
+
+// break points
+$bigScreen: 1920.98;
+$pc: 1023.98;
+$tablet: 990.98;
+$mobile: 767.98;
+$mobileSmall: 479.98;
+
+// colors
+$primaryBlack: #000;
+$primaryWhite: #fff;
+$grayText: #D4D4D8;
+$grayBorder: #71717A;
+
+[class*="__container"] {
+    max-width: #{$containerWidth}px;
+    margin: 0 auto;
+    padding-left: toRem(15);
+    padding-right: toRem(15);
+}
+
+body{
+    // font-family: Fira Sans;
+    font-family: Raleway;
+}

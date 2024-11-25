@@ -1,0 +1,58 @@
+@import "../../../assets/scss/_function";
+@import "../../../assets/scss/style.scss";
+
+.about-me {
+
+    // .about-me__container
+
+    &__container {
+        display: flex;
+        justify-content: space-between;
+        gap: toRem(20);
+        flex-wrap: wrap;
+    }
+}
+.about {
+
+    // .about__img
+
+    &__img {
+        max-width: toRem(525);
+        min-width: toRem(230);
+        flex-basis: 43.174%;
+        flex-grow: 1;
+    }
+
+    // .about__content
+
+    &__content {
+        max-width: toRem(600);
+        flex-basis: 50.1645%;
+        flex-grow: 1;
+    }
+}
+.content {
+    padding-top: toRem(20);
+    // .content__title
+
+    &__title {
+        @include adaptiveValue(font-size, 48, 28);
+        text-transform: capitalize;
+        &:not(:last-child){
+        margin-bottom: toEm(40, 48);;
+        }
+    }
+
+    // .content__text
+
+    &__text {
+        p{
+            line-height: 1.5;
+            letter-spacing: 0.32;
+            color: $grayBorder;
+            &:not(:last-child){
+            margin-bottom: toEm(20,16);;
+            }
+        }
+    }
+}

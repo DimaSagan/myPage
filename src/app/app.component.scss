@@ -1,0 +1,27 @@
+@import "../assets/scss/_function";
+@import "../assets/scss/style.scss";
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    // .wrapper__header
+    &__header {
+    }
+    // .wrapper__page
+    &__page {
+        flex-grow: 1;
+        height: 100%;
+    }
+    // .wrapper__footer
+    &__footer {
+    }
+}
+.header {
+    // background-color: rgb(112, 143, 112);
+}
+.page {
+    // background-color: rgb(143, 143, 112);
+}
+.footer {
+    background-color: $primaryBlack;
+}

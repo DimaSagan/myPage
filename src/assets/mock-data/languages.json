@@ -1,0 +1,20 @@
+{
+    "languages": {
+        "en": {
+            "header": {
+                "aboutMe": "About me",
+                "skills": "Skills",
+                "project": "Project",
+                "contactMe": "Contact Me"
+            }
+        },
+        "ua": {
+            "header": {
+                "aboutMe": "Про мене",
+                "skills": "Скіли",
+                "project": "Проекти",
+                "contactMe": "Мої контакти"
+            }
+        }
+    }
+}

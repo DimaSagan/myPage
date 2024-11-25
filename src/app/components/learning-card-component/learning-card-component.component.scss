@@ -1,0 +1,74 @@
+@import "../../../assets/scss/_function";
+@import "../../../assets/scss/style.scss";
+.learning-card {
+    color: $primaryWhite;
+    padding-left: toRem(24);
+    padding-right: toRem(24);
+    padding-top: toRem(30);
+    padding-bottom: toRem(30);
+    border: toRem(1) solid $grayBorder;
+    border-radius: toRem(10);
+    // .learning-card__header
+
+    &__header {
+    }
+
+    // .learning-card__description
+
+    &__description {
+        p {
+            &:not(:last-child) {
+                margin-bottom: toRem(10);
+                line-height: 1.37;
+            }
+        }
+        i{
+            text-transform: capitalize;
+        }
+    }
+}
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: toRem(30);
+    @include adaptiveValue(font-size, 28, 20);
+    text-transform: capitalize;
+    @media (max-width: toEm($mobile)) {
+        flex-wrap: wrap;
+        row-gap: toRem(15);
+    }
+    &:not(:last-child) {
+        margin-bottom: toEm(24, 28);
+    }
+    // .header__wrapper
+
+    &__wrapper {
+        display: flex;
+        align-items: center;
+        gap: toRem(30);
+        color: $primaryWhite;
+        @include adaptiveValue(gap, 30, 15);
+    }
+    // .header__logo
+
+    &__logo {
+        max-width: toRem(32);
+        flex-shrink: 0;
+    }
+
+    // .header__title
+
+    &__title {
+        font-weight: 600;
+    }
+
+    // .header__date
+
+    &__date {
+        font-size: toRem(16);
+        color: $grayText;
+        max-width: toRem(160);
+        flex-shrink: 0;
+    }
+}

@@ -1,0 +1,26 @@
+<button class="button">
+    <span class="button__back-ground back-ground">
+        <ng-content select="[content]"></ng-content>
+        <span class="back-ground__icon icon" *ngIf="icon"><ng-content select="[icon]"></ng-content></span>
+    </span>
+</button>
+
+
+
+<!-- how to use 
+
+<app-button [icon]="true">
+    <div content>Resume</div>
+    <div icon class="back-ground__icon icon">
+        <fa-icon [icon]="faArrowRightFromBracket" [rotate]="90"></fa-icon>
+    </div>
+</app-button>
+
+ts
+
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { faArrowRightFromBracket} from '@fortawesome/free-solid-svg-icons';
+
+
+ // faArrowRightFromBracket = faArrowRightFromBracket;
+-->

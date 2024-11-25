@@ -1,0 +1,114 @@
+@import "../../../assets/scss/_function";
+@import "../../../assets/scss/style.scss";
+
+.resume {
+    @media (max-width: toEm($mobile)) {
+        display: none;
+    }
+}
+.icon {
+    margin-right: toRem(5);
+}
+
+.logo,
+.header__action-laguage,
+.header__action-menu{
+    position: relative;
+    z-index: 10;
+}
+
+.header {
+    // .header__container
+
+    &__container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-top: toRem(24);
+        padding-bottom: toRem(24);
+        @include adaptiveValue(padding-top, 24, 10);
+        @include adaptiveValue(padding-bottom, 24, 10);
+    }
+
+    // .header__navigation
+
+    &__navigation {
+        font-size: toRem(20);
+        font-weight: 600;
+        text-transform: capitalize;
+        display: flex;
+        gap: toRem(32);
+        @media (max-width: toEm($mobile)) {
+            display: none;
+        }
+    }
+
+    // .header__action
+
+    &__action {
+        display: flex;
+        align-items: center;
+        gap: toRem(8);
+    }
+    &__action-laguage {
+        font-size: toRem(17);
+        color: grey;
+        transition: color 0.3s ease-in-out;
+        cursor: pointer;
+        button {
+            font-weight: 500;
+        }
+        @media (any-hover: hover) {
+            &:hover {
+                color: $primaryBlack;
+            }
+        }
+    }
+
+    &__action-menu {
+        width: toRem(30);
+        height: toRem(30);
+        @media(min-width: toEm($mobile)){
+                display: none;
+               }
+        span {
+            position: absolute;
+            width: toRem(30);
+            height: toRem(4);
+            background-color: $primaryBlack;
+            top: calc(50% - 2px);
+            left: 0;
+            &:first-child {
+                top: 0;
+            }
+            &:last-child {
+                top: calc(100% - 4px);
+            }
+        }
+    }
+}
+
+.navigation {
+    // .navigation__link
+
+    &__link {
+        position: relative;
+        &::after {
+            content: "";
+            width: 0;
+            height: toRem(2);
+            background-color: $primaryBlack;
+            position: absolute;
+            left: 0;
+            bottom: toRem(-5);
+            transition: width 0.5s cubic-bezier(0.23, 0.58, 0.97, 0.42);
+        }
+        @media (any-hover: hover) {
+            &:hover {
+                &::after {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}

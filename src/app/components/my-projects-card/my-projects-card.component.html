@@ -1,0 +1,30 @@
+<div class="project-card">
+
+    <div class="project-card__wrapper" [ngClass]="{ 'project-card__wrapper--reverse' : reverse}">
+
+        <div class="project-card__cover">
+            <img src="{{card.img}}" alt="cover">
+        </div>
+
+        <div class="project-card__description description">
+
+            <div class="description__number">
+                <div>{{card.id}}</div>
+            </div>
+
+            <div class="description__title">
+                <h3>{{card.title|translate}}</h3>
+            </div>
+
+            <div class="description__text">
+                <p>
+                    {{card.description|translate}}
+                </p>
+            </div>
+            <div class="description__icon">
+                <ng-content></ng-content>
+            </div>
+        </div>
+    </div>
+
+</div>

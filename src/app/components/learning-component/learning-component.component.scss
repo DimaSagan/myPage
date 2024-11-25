@@ -1,0 +1,24 @@
+@import "../../../assets/scss/_function";
+@import "../../../assets/scss/style.scss";
+
+.learning {
+    background-color: $primaryBlack;
+    padding-top: toRem(80);
+    padding-bottom: toRem(60);
+    &__title {
+        color: $primaryWhite;
+        text-align: center;
+        text-transform: capitalize;
+        @include adaptiveValue(font-size, 48, 28);
+        &:not(:last-child) {
+            margin-bottom: toEm(80, 48);
+        }
+    }
+    &__wrapper {
+        padding-left: toRem(24);
+        padding-right: toRem(24);
+        display: flex;
+        flex-direction: column;
+        gap: toRem(32);
+    }
+}

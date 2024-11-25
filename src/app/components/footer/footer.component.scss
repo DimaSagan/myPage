@@ -1,0 +1,29 @@
+@import "../../../assets/scss/_function";
+@import "../../../assets/scss/style.scss";
+
+.footer {
+
+    // .footer__container
+
+    &__container {
+        color: $primaryWhite;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-top: toRem(24);
+        padding-bottom: toRem(24);
+
+    }
+
+    // .footer__logo
+
+    &__logo {
+        filter: invert(100%);
+    }
+
+    // .footer__copyrigth
+
+    &__copyrigth {
+        font-size: toRem(14);
+    }
+}

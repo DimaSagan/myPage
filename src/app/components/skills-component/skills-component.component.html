@@ -1,0 +1,13 @@
+<div class="skills__container">
+    <h2 class="skills__title">{{'skills.titleP1'|translate}} <strong>{{'skills.titleP2'|translate}}</strong></h2>
+    <div class="skills__card">
+        @for (item of iconsAndTitles; track $index) 
+        {
+        <div class="wrapper-card">
+            <app-skills-card [title]="item.title">
+            <fa-icon [icon]="item.icon"></fa-icon>
+        </app-skills-card>
+        </div>
+    }
+    </div>
+</div>

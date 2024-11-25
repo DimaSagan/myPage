@@ -1,0 +1,31 @@
+<div class="header__container">
+    <div class="logo">
+        <img src="img/logo.png" alt="logo" width="50">
+    </div>
+    <nav class="header__navigation navigation">
+        <a href="" class="navigation__link">{{'header.aboutMe'| translate}}</a>
+        <a href="" class="navigation__link">{{'header.contactMe'| translate}}</a>
+        <a href="" class="navigation__link">{{'header.project'| translate}}</a>
+        <a href="" class="navigation__link">{{'header.skills'| translate}}</a>
+    </nav>
+
+    <div class="header__action">
+        <div class="header__action-laguage" (click)="switchLanguage()">
+            <fa-icon [icon]="faGlobe" class="icon"></fa-icon>
+            @if(!languageChange){ <button>ua</button>}
+            @else{<button>en</button>}
+        </div>
+        <app-button [icon]="true" class="resume">
+            <div content>Resume</div>
+            <fa-icon [icon]="faArrowRightFromBracket" [rotate]="90"></fa-icon>
+        </app-button>
+        <!-- <button (click)="openMenu()" class="test">test</button> -->
+         <div class="header__action-menu" (click)="openMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+</div>
+
+<app-burger-menu></app-burger-menu>

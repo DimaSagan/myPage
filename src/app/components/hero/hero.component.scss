@@ -1,0 +1,83 @@
+@import "../../../assets/scss/_function";
+@import "../../../assets/scss/style.scss";
+.hero {
+
+    // .hero__container
+
+    &__container {
+        // padding-top: toRem(60);
+        @include adaptiveValue(padding-top, 60, 40, 0, $containerWidth, $mobileSmall);
+        display: flex;
+        height: 100;
+        @media(max-width: toEm($mobileSmall)){
+                flex-direction: column-reverse;
+                gap: toRem(40);
+               }
+    }
+
+    // .hero__description
+
+    &__description {
+        max-width: toRem(600);
+    }
+
+    // .hero__image
+
+    &__image {
+        flex-grow: 1;
+    }
+    &__description,
+    &__image{
+        flex-basis: 50%;
+    }
+}
+.description { 
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    justify-content: space-between;
+    gap: toRem(32);
+    // .description__wrapper
+
+    &__wrapper{
+
+    }
+    // .description__title
+
+    &__title {
+        @include adaptiveValue(font-size,48,28);
+        text-transform: capitalize;
+        line-height: toEm(70,48);
+        &:not(:last-child){
+        margin-bottom: toEm(32, 48);
+        }
+    }
+
+    // .description__content
+
+    &__content {
+        color: $grayBorder;
+        line-height: 1.5;
+        letter-spacing: toRem(0.32);;
+    }
+
+    // .description__action
+
+    &__action {
+    }
+}
+.action {
+    display: flex;
+    gap: toRem(32);
+    // .action__icon
+
+    &__icon {
+    }
+}
+.image-hero {
+    display: flex;
+    align-items: center;
+    &__wrapper{
+        overflow: hidden;
+    }
+}

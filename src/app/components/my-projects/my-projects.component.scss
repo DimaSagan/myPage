@@ -1,0 +1,23 @@
+@import "../../../assets/scss/_function";
+@import "../../../assets/scss/style.scss";
+.my-projects{
+    color: $primaryWhite;
+    background-color: $primaryBlack;
+    padding-top: toRem(80);
+    padding-bottom: toRem(80);
+
+    &__title{
+        text-transform: capitalize;
+        text-align: center;
+        @include adaptiveValue(font-size, 48, 28);
+        &:not(:last-child){
+        margin-bottom: toEm(60,48);
+        }
+    }
+
+    &__cards-wrapper{
+        &:not(:last-child){
+        margin-bottom: toRem(60);;
+        }
+    }
+}

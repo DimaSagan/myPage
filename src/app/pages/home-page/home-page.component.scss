@@ -1,0 +1,10 @@
+@import "../../../assets/scss/_function";
+@import "../../../assets/scss/style.scss";
+.hero,
+.skills,
+.learning,
+.about {
+    &:not(:last-child) {
+        margin-bottom: toRem(100);
+    }
+}

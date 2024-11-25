@@ -1,0 +1,25 @@
+<div class="learning-card">
+    <div class="learning-card__header header">
+        <div class="header__wrapper">
+            <div class="header__logo">
+                <ng-content></ng-content>
+            </div>
+            <div class="header__title">
+                <h3>{{title|translate}}</h3>
+            </div>
+        </div>
+        <div class="header__date">
+            <p>{{date|translate}}</p>
+        </div>
+    </div>
+    <div class="learning-card__description">
+        <p>
+            {{description|translate}}
+        </p>
+        <i>
+            {{teacher|translate}}
+        </i>
+    </div>
+</div>
+
+

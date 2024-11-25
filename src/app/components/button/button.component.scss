@@ -1,0 +1,61 @@
+@import "../../../assets/scss/_function";
+@import "../../../assets/scss/style.scss";
+div {
+    padding: toRem(100);
+}
+.back-ground {
+    transition: transform 0.3s;
+    display: flex;
+    gap: toRem(15);
+}
+.back-ground,
+.icon {
+    transition: transform 0.3s;
+}
+
+.icon {
+    display: inline-block;
+    transform:  translateX(0);
+}
+.button {
+    padding: toRem(14) toRem(18);
+    color: $primaryWhite;
+    letter-spacing: 0.7px;
+    font-size: toRem(20);
+    font-weight: 600;
+    border-radius: toRem(4);
+    border: 2px solid $primaryBlack;
+    line-height: 1.2;
+    position: relative;
+    overflow: hidden;
+    transform: scale(1);
+    transition:
+        transform 0.5s,
+        color 0.7s cubic-bezier(.23,.58,.97,.42);
+    &::before {
+        content: "";
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        z-index: -1;
+        background-color: $primaryBlack;
+        left: 0;
+        top: 0;
+        transition: top 0.6s cubic-bezier(.23,.58,.97,.42);
+    }
+    @media (any-hover: hover) {
+        &:hover {
+            transform: scale(1.05);
+            color: $primaryBlack;
+            &::before {
+                top: 100%;
+            }
+            .back-ground {
+                transform: translateX(toRem(5));
+            }
+            .icon {
+                transform:  translateX(toRem(-10));
+            }
+        }
+    }
+}

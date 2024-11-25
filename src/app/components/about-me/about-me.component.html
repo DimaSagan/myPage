@@ -1,0 +1,18 @@
+<div class="about-me__container about">
+    <div class="about__img">
+        <app-dude-about-me></app-dude-about-me>
+    </div>
+    <div class="about__content content">
+        <div class="content__title">
+            <h2>{{'aboutMe.title.p1'|translate}} <strong>{{'aboutMe.title.p2'|translate}}</strong></h2>
+        </div>
+        <div class="content__text">
+            @if ((paragraphs$|async); as paragraphs) {
+                @for (paragraph of paragraphs; track $index) {
+                    <p>{{paragraph|translate}}</p>
+                }
+            }
+            
+        </div>
+    </div>
+</div>

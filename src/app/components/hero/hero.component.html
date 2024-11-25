@@ -1,0 +1,27 @@
+<div class="hero__container">
+    <article class="hero__description description">
+        <div class="description__wrapper">
+            <h1 class="description__title">
+                 {{'hero.title.pt1'| translate}}
+                 <strong> {{'hero.title.pt2'| translate}}</strong>
+                 @if((currentLanguage$ | async )==='ua'){<br>}
+                 {{'hero.title.pt3'| translate}}
+            </h1>
+            <p class="description__content">
+                {{'hero.description'| translate}}
+            </p>
+        </div>
+
+        <div class="description__action action">
+            @for(icon of icons; track $index){
+                <app-squere-link><fa-icon [icon]="icon"></fa-icon></app-squere-link>
+            }
+        </div>
+    </article>
+
+    <article class="hero__image image-hero">
+        <div class="image-hero__wrapper">
+            <app-dude-hero></app-dude-hero>
+        </div>
+    </article>
+</div>
