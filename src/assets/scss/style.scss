@@ -20,8 +20,11 @@ $grayBorder: #71717A;
     padding-left: toRem(15);
     padding-right: toRem(15);
 }
-
+html{
+    scroll-behavior: smooth;
+}
 body{
     // font-family: Fira Sans;
     font-family: Raleway;
+    
 }

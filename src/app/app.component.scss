@@ -6,11 +6,16 @@
     flex-direction: column;
     // .wrapper__header
     &__header {
+        position: fixed;
+        width: 100%;
+        background-color: #fff;
+        z-index: 10;
     }
     // .wrapper__page
     &__page {
         flex-grow: 1;
         height: 100%;
+        // padding-top: toRem(104);
     }
     // .wrapper__footer
     &__footer {

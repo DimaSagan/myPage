@@ -2,9 +2,15 @@
 @import "../../../assets/scss/style.scss";
 .hero,
 .skills,
-.learning,
-.about {
+.learning{
     &:not(:last-child) {
         margin-bottom: toRem(100);
     }
+}
+.skills,
+.about,
+.my-projects,
+.hero{
+    // padding-top: toRem(110);
+    @include adaptiveValue(padding-top, 110, 67)
 }

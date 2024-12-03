@@ -2,7 +2,7 @@
     <div class="about__img">
         <app-dude-about-me></app-dude-about-me>
     </div>
-    <div class="about__content content">
+    <div class="about__content content" appInView [threshold]="1">
         <div class="content__title">
             <h2>{{'aboutMe.title.p1'|translate}} <strong>{{'aboutMe.title.p2'|translate}}</strong></h2>
         </div>

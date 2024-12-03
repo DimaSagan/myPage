@@ -2,7 +2,6 @@
 @import "../../../assets/scss/style.scss";
 
 .about-me {
-
     // .about-me__container
 
     &__container {
@@ -13,7 +12,6 @@
     }
 }
 .about {
-
     // .about__img
 
     &__img {
@@ -33,26 +31,43 @@
 }
 .content {
     padding-top: toRem(20);
+    overflow: hidden;
     // .content__title
 
     &__title {
         @include adaptiveValue(font-size, 48, 28);
         text-transform: capitalize;
-        &:not(:last-child){
-        margin-bottom: toEm(40, 48);;
+        &:not(:last-child) {
+            margin-bottom: toEm(40, 48);
+        }
+        .in-view &{
+            animation: roll 1s ease forwards;
         }
     }
 
     // .content__text
 
     &__text {
-        p{
+        p {
             line-height: 1.5;
             letter-spacing: 0.32;
             color: $grayBorder;
-            &:not(:last-child){
-            margin-bottom: toEm(20,16);;
+            &:not(:last-child) {
+                margin-bottom: toEm(20, 16);
             }
         }
+        .in-view &{
+            animation: roll 1s ease forwards 0.3s;
+        }
+    }
+    &__title,
+    &__text {
+        transform: translateX(100%);
+    }
+}
+
+@keyframes roll{
+    to{
+        transform: translateX(0);
     }
 }

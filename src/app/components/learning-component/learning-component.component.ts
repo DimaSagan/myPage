@@ -1,14 +1,13 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { LearningCardComponentComponent } from "../learning-card-component/learning-card-component.component";
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { faCode } from '@fortawesome/free-solid-svg-icons';
-import { faAngular, faJs } from '@fortawesome/free-brands-svg-icons';
-import { TranslateModule, TranslateService } from '@ngx-translate/core';
+import { TranslateModule } from '@ngx-translate/core';
 import { FirebaseServiceService } from '../../service/firebaseServise/firebase-service.service';
-import { delay, map, Observable, of, switchAll } from 'rxjs';
+import { Observable} from 'rxjs';
 import { CommonModule } from '@angular/common';
 import { LearningCard } from '../../models/cards-model';
 import { IconTransformPipe } from '../../pipes/icon-transform/icon-transform.pipe';
+import { LightDirective } from '../../directives/mouse-light/light.directive';
 
 @Component({
   selector: 'app-learning-component',
@@ -18,7 +17,8 @@ import { IconTransformPipe } from '../../pipes/icon-transform/icon-transform.pip
     FontAwesomeModule,
     TranslateModule,
     CommonModule,
-    IconTransformPipe
+    IconTransformPipe,
+    LightDirective
   ],
   templateUrl: './learning-component.component.html',
   styleUrl: './learning-component.component.scss',

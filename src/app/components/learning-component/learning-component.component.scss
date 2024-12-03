@@ -3,8 +3,11 @@
 
 .learning {
     background-color: $primaryBlack;
+    // background: rgb(115, 108, 108);
     padding-top: toRem(80);
     padding-bottom: toRem(60);
+    position: relative;
+    z-index: 1;
     &__title {
         color: $primaryWhite;
         text-align: center;

@@ -6,23 +6,57 @@
     padding-right: toRem(24);
     padding-top: toRem(30);
     padding-bottom: toRem(30);
-    border: toRem(1) solid $grayBorder;
+    border: toRem(1) solid rgba(255, 255, 255, 0.176);
     border-radius: toRem(10);
-    // .learning-card__header
-
-    &__header {
+    position: relative;
+    background: black;
+    opacity: 0;
+    transition: opacity ease 0.5s;
+    &.in-view {
+        opacity: 1;
+    }
+    @media (any-hover: hover) {
+        &:hover {
+            background-attachment: fixed;
+            background-image: radial-gradient(
+                circle at var(--x) var(--y),
+                hsla(33, 85%, 97%, 0.191),
+                hsl(0 0% 100% / 0.0125) toRem(170)
+            );
+        }
+        &::after {
+            content: "";
+            position: absolute;
+            inset: -2px;
+            background-attachment: fixed;
+            background-image: radial-gradient(
+                circle at var(--x) var(--y),
+                hsla(0, 0%, 100%, 0.817),
+                transparent toRem(100)
+            );
+            pointer-events: none;
+            z-index: -1;
+            border-radius: toRem(10);
+        }
     }
 
     // .learning-card__description
 
     &__description {
+        transform: translateY(100%);
+        opacity: 0;
+        transition: opacity 0.5s ease 0.3s;
+        .in-view & {
+            opacity: 1;
+            animation: roll 1s ease forwards;
+        }
         p {
             &:not(:last-child) {
                 margin-bottom: toRem(10);
                 line-height: 1.37;
             }
         }
-        i{
+        i {
             text-transform: capitalize;
         }
     }
@@ -34,6 +68,7 @@
     gap: toRem(30);
     @include adaptiveValue(font-size, 28, 20);
     text-transform: capitalize;
+
     @media (max-width: toEm($mobile)) {
         flex-wrap: wrap;
         row-gap: toRem(15);
@@ -70,5 +105,18 @@
         color: $grayText;
         max-width: toRem(160);
         flex-shrink: 0;
+    }
+    &__wrapper,
+    &__date {
+        transform: translateY(155%);
+        .in-view & {
+            animation: roll 1s ease forwards;
+        }
+    }
+}
+
+@keyframes roll {
+    to {
+        transform: translateY(0);
     }
 }

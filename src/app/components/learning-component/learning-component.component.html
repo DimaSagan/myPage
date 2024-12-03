@@ -1,8 +1,8 @@
 <!-- Мій Шлях Навчання -->
-<div class="learning">
+<div class="learning" appLight>
     <h2 class="learning__title">{{'learning.leartningTitleP1'|translate}} <strong>{{'learning.leartningTitleP2'|translate}} </strong></h2>
     <div class="learning__container">
-        <div class="learning__wrapper">
+        <div class="learning__wrapper" >
             @if(cards$|async; as cards){
             @for (card of cards; track $index){
             <app-learning-card-component [title]="card.title" [date]="card.date" [description]="card.description" [teacher]="card.teacher">

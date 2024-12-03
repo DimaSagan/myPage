@@ -5,7 +5,8 @@
     background-color: $primaryBlack;
     padding-top: toRem(80);
     padding-bottom: toRem(80);
-
+    position: relative;
+    z-index: 1;
     &__title{
         text-transform: capitalize;
         text-align: center;

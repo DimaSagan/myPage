@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { AfterViewInit, ChangeDetectionStrategy, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-dude-hero',
@@ -8,13 +8,22 @@ import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
   styleUrl: './dude-hero.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class DudeHeroComponent implements OnInit{
-ngOnInit(): void {
-  // const pathes = document.querySelectorAll('path')
+export class DudeHeroComponent implements AfterViewInit{
+  
+@ViewChild('svgContainer', {read: ElementRef}) svgContainer!: ElementRef
+  
+  ngAfterViewInit(): void {
 
-  // for (let index = 0; index < pathes.length; index++) {
-  //   console.log(`Length ${index+1} is ${Math.ceil(pathes[index].getTotalLength())+'px'}`)
-    
-  // }
-}
+    const pathes = this.svgContainer.nativeElement.querySelectorAll('path')
+
+    for (let i = 0; i < pathes.length; i++) {
+      let length = Math.ceil(pathes[i].getTotalLength())
+      this.setStyle(pathes[i], length)
+    }
+  }
+
+  setStyle(el:SVGPathElement, lenght?:number) {
+    el.style.setProperty('stroke-dasharray', `${lenght}px`)
+    el.style.setProperty('stroke-dashoffset', `${lenght}px`)
+  }
 }

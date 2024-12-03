@@ -3,6 +3,7 @@ import { SkillsCardComponent } from "../skills-card/skills-card.component";
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { TranslateModule } from '@ngx-translate/core';
 import { faAngular, faGitAlt, faHtml5, faJs, faSass } from '@fortawesome/free-brands-svg-icons';
+import { DelayInViewDirective } from '../../directives/intersection-observer/delay-in-view/delay-in-view.directive';
 
 @Component({
   selector: 'app-skills-component',
@@ -11,6 +12,7 @@ import { faAngular, faGitAlt, faHtml5, faJs, faSass } from '@fortawesome/free-br
     SkillsCardComponent,
     FontAwesomeModule,
     TranslateModule,
+    DelayInViewDirective
   ],
   templateUrl: './skills-component.component.html',
   styleUrl: './skills-component.component.scss',

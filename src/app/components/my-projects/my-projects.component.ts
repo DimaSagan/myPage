@@ -8,6 +8,7 @@ import { ProjectCard } from '../../models/cards-model';
 import { BooleanTransformPipe } from '../../pipes/boolean-transform/boolean-transform.pipe';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { IconTransformPipe } from '../../pipes/icon-transform/icon-transform.pipe';
+import { LightDirective } from '../../directives/mouse-light/light.directive';
 
 @Component({
   selector: 'app-my-projects',
@@ -18,7 +19,8 @@ import { IconTransformPipe } from '../../pipes/icon-transform/icon-transform.pip
     TranslateModule,
     BooleanTransformPipe,
     FontAwesomeModule,
-    IconTransformPipe
+    IconTransformPipe,
+    LightDirective
   ],
   templateUrl: './my-projects.component.html',
   styleUrl: './my-projects.component.scss',

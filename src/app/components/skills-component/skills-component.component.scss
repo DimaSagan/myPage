@@ -1,7 +1,6 @@
 @import "../../../assets/scss/_function";
 @import "../../../assets/scss/style.scss";
 .skills {
-
     // .skills__container
 
     &__container {
@@ -14,8 +13,8 @@
         font-size: toRem(48);
         text-transform: capitalize;
         text-align: center;
-        &:not(:last-child){
-        margin-bottom: toEm(80, 48);
+        &:not(:last-child) {
+            margin-bottom: toEm(80, 48);
         }
     }
 
@@ -26,12 +25,25 @@
         grid-template-columns: repeat(auto-fill, minmax(186px, 1fr));
         column-gap: 5.8%;
         @include adaptiveValue(row-gap, 40, 20);
-        @media(max-width: toEm($mobileSmall)){
+        @media (max-width: toEm($mobileSmall)) {
             grid-template-columns: repeat(auto-fill, minmax(166px, 1fr));
-               }
+        }
     }
 }
-.wrapper-card{
+.wrapper-card {
+    transition: scale 0.3s;
+    box-shadow: toRem(3) toRem(3) toRem(12) rgba(0, 0, 0, 0.261);
+    border-radius: toRem(4);
+    @media (any-hover: hover) {
+        &:hover {
+            scale: 1.2;
+            & + .wrapper-card {
+                scale: 1.05;
+            }
+        }
+        &:has(+ .wrapper-card:hover){
+            scale: 1.05;
+        }
+    }
     
 }
-

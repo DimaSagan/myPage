@@ -40,7 +40,7 @@
     // .description__wrapper
 
     &__wrapper{
-
+        overflow: hidden
     }
     // .description__title
 
@@ -51,6 +51,8 @@
         &:not(:last-child){
         margin-bottom: toEm(32, 48);
         }
+        transform: translateX(-100%);
+        animation: textMoove 1s ease forwards 1s;
     }
 
     // .description__content
@@ -59,6 +61,8 @@
         color: $grayBorder;
         line-height: 1.5;
         letter-spacing: toRem(0.32);;
+        transform: translateX(-100%);
+        animation: textMoove 1s ease forwards 1.3s;
     }
 
     // .description__action
@@ -66,6 +70,12 @@
     &__action {
     }
 }
+@keyframes textMoove{
+    to{
+        transform: translateX(0);
+    }
+}
+
 .action {
     display: flex;
     gap: toRem(32);

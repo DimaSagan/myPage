@@ -2,21 +2,52 @@
 @import "../../../assets/scss/style.scss";
 .project-card {
     padding-bottom: toRem(25);
-   @media(max-width: toEm($mobileSmall)){
-           border-bottom: 1px solid $grayBorder;
-          }
-    
+    background: black;
+    // border: toRem(1) solid rgba(255, 255, 255, 0.176);
+    border-radius: toRem(10);
+    padding: toRem(10);
+    position: relative;
+    cursor: pointer;
+    // z-index: ;
+    @media (any-hover: hover) {
+        &:hover {
+            background-attachment: fixed;
+            background-image: radial-gradient(
+                circle at var(--x) var(--y),
+                hsla(33, 85%, 97%, 0.191),
+                hsl(0 0% 100% / 0.0125) toRem(170)
+            );
+        }
+    }
+    &::after {
+        content: "";
+        position: absolute;
+        inset: -2px;
+        border-radius: toRem(10);
+        z-index: -1;
+        background-attachment: fixed;
+        background-image: radial-gradient(
+            circle at var(--x) var(--y),
+            hsla(0, 0%, 100%, 0.817),
+            transparent toRem(100)
+        );
+        pointer-events: none;
+    }
+    @media (max-width: toEm($mobileSmall)) {
+        // border-bottom: 1px solid $grayBorder;
+    }
+
     // .project-card__wrapper
 
     &__wrapper {
         display: flex;
         justify-content: space-between;
         gap: toRem(20);
-        @media(max-width: toEm($mobile)){
-                flex-wrap: wrap;
-               }
+        @media (max-width: toEm($mobile)) {
+            flex-wrap: wrap;
+        }
     }
-    &__wrapper--reverse{
+    &__wrapper--reverse {
         flex-direction: row-reverse;
     }
     // .project-card__cover
@@ -27,10 +58,10 @@
         max-width: toRem(530);
         max-width: 100%;
         min-width: toRem(280);
-        @media(max-width: toEm($mobile)){
-        flex-grow: 1;
-               }
-        img{
+        @media (max-width: toEm($mobile)) {
+            flex-grow: 1;
+        }
+        img {
             width: 100%;
             height: 100%;
             aspect-ratio: 530 / 397;
@@ -55,7 +86,7 @@
 
     // .description__number
 
-    &__number{
+    &__number {
         font-size: toRem(48);
         font-weight: 700;
     }

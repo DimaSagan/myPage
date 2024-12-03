@@ -4,6 +4,7 @@ import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { FirebaseServiceService } from '../../service/firebaseServise/firebase-service.service';
 import { Observable } from 'rxjs';
 import { CommonModule } from '@angular/common';
+import { InViewDirective } from '../../directives/intersection-observer/base-in-view-directive/in-view.directive';
 
 @Component({
   selector: 'app-about-me',
@@ -11,7 +12,8 @@ import { CommonModule } from '@angular/common';
   imports: [
     DudeAboutMeComponent,
     TranslateModule,
-    CommonModule
+    CommonModule,
+    InViewDirective
   ],
   templateUrl: './about-me.component.html',
   styleUrl: './about-me.component.scss',

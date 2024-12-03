@@ -4,19 +4,40 @@
         <div class="callback__form form">
             <form [formGroup]="callback" (ngSubmit)="onSubmit()">
                 <div class="form__input">
-                    <input type="text" id="name" formControlName="name">
-                    <input type="email" id="email" formControlName="email">
-                    <input type="text" id="website" formControlName="website">
-                    <textarea name="message" id="message"></textarea>
+
+                    <div>
+                        <input type="text" id="name" formControlName="name" placeholder="Your name">
+                        @if (callback.get('name')?.touched && callback.get('name')?.invalid) {
+                            <small>Name is required</small>
+                        }
+                    </div>
+
+                    <div>
+                        <input type="email" id="email" formControlName="email" placeholder="Email">
+                        @if (callback.get('email')?.touched && callback.get('email')?.invalid) {
+                            <small>Email is required</small>
+                        }
+                    </div>
+
+                    <input type="text" id="website" formControlName="website" placeholder="Your website (if exist)">
+
+                    <div>
+                        <textarea name="message" id="message" formControlName="message" placeholder="How can I help?"></textarea>
+                        @if (callback.get('message')?.touched && callback.get('message')?.invalid) {
+                            <small>Enter your message</small>
+                        }
+                    </div>
                 </div>
                 <div class="form__action">
-                   <app-button><div content>Get In Touch</div></app-button> 
+                   <app-button (clik)="onSubmit()"><div content>Get In Touch</div></app-button> 
 
-                   @for (item of icon; track $index) {
-                    <app-squere-link>
-                        <div icon><fa-icon [icon]="item.icon|iconTransform"></fa-icon></div>
-                    </app-squere-link>
-                   }
+                  <div class="form__action-wrapper">
+                       @for (item of icon; track $index) {
+                        <app-squere-link>
+                            <div icon><fa-icon [icon]="item.icon|iconTransform"></fa-icon></div>
+                        </app-squere-link>
+                       }
+                  </div>
                 </div>
             </form>
         </div>

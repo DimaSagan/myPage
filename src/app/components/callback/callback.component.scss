@@ -12,15 +12,6 @@
         flex-wrap: wrap-reverse;
     }
 
-    // .callback__form
-
-    &__form {
-    }
-
-    // .callback__content
-
-    &__content {
-    }
 }
 .form {
     flex-basis: toRem(37.17);
@@ -29,7 +20,7 @@
     @media (max-width: toEm(650)) {
         min-width: 100%;
     }
-    
+
     // .form__input
     form {
         width: 100%;
@@ -37,17 +28,38 @@
     &__input {
         display: flex;
         flex-direction: column;
-        gap: toRem(20);
-        * {
+        gap: toRem(25);
+        div{
+            position: relative;
+            small{
+                position: absolute;
+                left: toRem(16);
+                top: 110%;
+                color: red;
+            }
+        }
+        input,
+        textarea {
             width: 100%;
             min-width: toRem(280);
             padding: toRem(16) toRem(24);
             border: toRem(1) solid $primaryBlack;
             border-radius: toRem(4);
-        }
-        &:not(:last-child){
-            margin-bottom: toEm(20, 16);
+            resize: none;
+            cursor: pointer;
+            &:focus {
+                &::placeholder {
+                    visibility: hidden;
+                }
             }
+        }
+        textarea{
+
+            min-height: toRem(100);
+        }
+        &:not(:last-child) {
+            margin-bottom: toEm(25, 16);
+        }
     }
 
     // .form__action
@@ -55,12 +67,13 @@
     &__action {
         display: flex;
         gap: toRem(15);
-        // justify-content: space-between;
         flex-wrap: wrap;
-        // @media(max-width: toEm($mobile)){
-        //         justify-content: flex-start;
-        //        }
     }
+
+    &__action-wrapper{
+        display: flex;
+        gap: toRem(15);;
+    }    
 }
 .content {
     flex-basis: 50%;
